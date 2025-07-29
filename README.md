@@ -6,9 +6,9 @@ This capstone project applies Infrastructure as Code (IaC) concepts using Terraf
 
 ## Team Members
 
-- [Your Name](https://github.com/yourusername) - Team Lead
-- [Team Member 2](https://github.com/teammember2) - Infrastructure Developer
-- [Team Member 3](https://github.com/teammember3) - Application Developer
+- [Yuntian Du](https://github.com/DytAC-study)
+- [Cong Zhao](https://github.com/zhao0294)
+- [Yifan Jian](https://github.com/JianyiF)
 
 ## Project Structure
 
@@ -40,8 +40,8 @@ This capstone project applies Infrastructure as Code (IaC) concepts using Terraf
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd final
+   git clone https://github.com/zhao0294/cst8918-final-project.git
+   cd cst8918-final-project
    ```
 
 2. **Initialize Terraform**
@@ -64,7 +64,7 @@ This capstone project applies Infrastructure as Code (IaC) concepts using Terraf
 
 ## Infrastructure Components
 
-- **Azure Resource Group**: `cst8918-final-project-group-<group-number>`
+- **Azure Resource Group**: `cst8918-final-project-group-1`
 - **Virtual Network**: 10.0.0.0/14 with 4 subnets
 - **AKS Clusters**: Kubernetes 1.32 with Standard B2s VM size
 - **Azure Container Registry**: For Docker image storage
