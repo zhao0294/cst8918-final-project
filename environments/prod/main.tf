@@ -9,7 +9,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "cst8918-final-project-group-1"
-    storage_account_name = "cst8918tfstate"
+    storage_account_name = "cst8918tfstate2025"
     container_name       = "terraform-state"
     key                  = "prod/terraform.tfstate"
   }
