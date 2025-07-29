@@ -43,7 +43,7 @@ async function getWeatherData(city) {
     }
 }
 
-// 主页路由
+// Main page route
 app.get('/', (req, res) => {
     res.send(`
         <!DOCTYPE html>
@@ -348,7 +348,7 @@ app.get('/api/weather', async (req, res) => {
     res.json(weatherData);
 });
 
-// 健康检查端点
+// Health check endpoint
 app.get('/health', (req, res) => {
     res.json({
         status: 'healthy',
