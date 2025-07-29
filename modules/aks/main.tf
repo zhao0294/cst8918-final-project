@@ -42,11 +42,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     docker_bridge_cidr = "172.17.0.1/16"
   }
 
-  addon_profile {
-    azure_policy {
-      enabled = true
-    }
-  }
+  azure_policy_enabled = true
 
   tags = var.tags
 }
