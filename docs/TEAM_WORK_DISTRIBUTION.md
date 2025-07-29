@@ -1,31 +1,31 @@
-# CST8918 期末作业 - 团队工作分配
+# CST8918 Final Assignment - Team Work Distribution
 
-## 项目概述
+## Project Overview
 
-本文档概述了CST8918期末作业的工作分配计划，确保每个团队成员都有平等的贡献和pull request。
+This document outlines the work distribution plan for the CST8918 final assignment, ensuring equal contribution and pull requests from each team member.
 
-## 团队成员
+## Team Members
 
-- **Yuntian Du (DytAC-study)** - 基础设施和DevOps
-- **Cong Zhao (zhao0294)** - 应用开发和CI/CD  
-- **Yifan Jian (JianyiF)** - 测试和文档
+- **Yuntian Du (DytAC-study)** - Infrastructure and DevOps
+- **Cong Zhao (zhao0294)** - Application Development and CI/CD  
+- **Yifan Jian (JianyiF)** - Testing and Documentation
 
-## 工作分配计划
+## Work Distribution Plan
 
-### 🏗️ **Yuntian Du (DytAC-study) - 基础设施和DevOps**
+### 🏗️ **Yuntian Du (DytAC-study) - Infrastructure and DevOps**
 
-#### **Pull Request #1: 基础设施搭建**
-**工作量**: 项目总量的20%
-**重点**: Azure基础设施、Terraform模块
+#### **Pull Request #1: Infrastructure Setup**
+**Workload**: 20% of total project
+**Focus**: Azure infrastructure, Terraform modules
 
-**任务**:
-- ✅ 创建Terraform模块结构
-- ✅ 配置Azure资源组和存储账户
-- ✅ 设置多环境配置（dev/test/prod）
-- ✅ 配置网络安全组和防火墙规则
-- ✅ 实现后端状态管理
+**Tasks**:
+- ✅ Create Terraform module structure
+- ✅ Configure Azure resource groups and storage accounts
+- ✅ Set up multi-environment configuration (dev/test/prod)
+- ✅ Configure network security groups and firewall rules
+- ✅ Implement backend state management
 
-**包含的文件**:
+**Files included**:
 ```
 modules/backend/main.tf
 modules/backend/variables.tf
@@ -33,306 +33,243 @@ modules/backend/outputs.tf
 modules/network/main.tf
 modules/network/variables.tf
 modules/network/outputs.tf
-environments/dev/main.tf (基础配置)
-environments/test/main.tf (基础配置)
-environments/prod/main.tf (基础配置)
+environments/dev/main.tf (basic configuration)
+environments/test/main.tf (basic configuration)
+environments/prod/main.tf (basic configuration)
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
 git checkout -b feature/infrastructure-setup
 git add modules/backend/ modules/network/
 git add environments/*/main.tf
-git commit -m "feat: 添加基础设施Terraform模块"
+git commit -m "feat: add infrastructure Terraform modules"
 git push origin feature/infrastructure-setup
-# 创建Pull Request
+# Create Pull Request
 ```
 
-#### **Pull Request #2: AKS部署**
-**工作量**: 项目总量的20%
-**重点**: Kubernetes、AKS集群、容器编排
+#### **Pull Request #2: AKS Deployment**
+**Workload**: 20% of total project
+**Focus**: Kubernetes, AKS clusters, container orchestration
 
-**任务**:
-- ✅ 在所有环境部署AKS集群
-- ✅ 配置Kubernetes命名空间
-- ✅ 设置Azure容器注册表
-- ✅ 配置网络策略和负载均衡器
-- ✅ 实现健康检查和监控
+**Tasks**:
+- ✅ Deploy AKS clusters in all environments
+- ✅ Configure Kubernetes namespaces
+- ✅ Set up Azure Container Registry
+- ✅ Configure network policies and load balancers
+- ✅ Implement health checks and monitoring
 
-**包含的文件**:
+**Files included**:
 ```
 modules/aks/main.tf
 modules/aks/variables.tf
 modules/aks/outputs.tf
-environments/dev/main.tf (AKS配置)
-environments/test/main.tf (AKS配置)
-environments/prod/main.tf (AKS配置)
+environments/dev/main.tf (AKS configuration)
+environments/test/main.tf (AKS configuration)
+environments/prod/main.tf (AKS configuration)
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
 git checkout -b feature/aks-deployment
 git add modules/aks/
 git add environments/*/main.tf
-git commit -m "feat: 部署AKS集群并配置Kubernetes"
+git commit -m "feat: deploy AKS clusters and configure Kubernetes"
 git push origin feature/aks-deployment
-# 创建Pull Request
+# Create Pull Request
 ```
 
 ---
 
-### 💻 **Cong Zhao (zhao0294) - 应用开发和CI/CD**
+### 💻 **Cong Zhao (zhao0294) - Application Development and CI/CD**
 
-#### **Pull Request #3: 天气应用开发**
-**工作量**: 项目总量的20%
-**重点**: Node.js开发、API集成、Docker
+#### **Pull Request #3: Weather Application Development**
+**Workload**: 20% of total project
+**Focus**: Node.js development, API integration, Docker
 
-**任务**:
-- ✅ 开发Node.js天气应用
-- ✅ 集成OpenWeatherMap API
-- ✅ 实现Docker容器化
-- ✅ 创建应用配置文件
-- ✅ 设置环境变量和密钥
+**Tasks**:
+- ✅ Develop Node.js weather application
+- ✅ Integrate OpenWeatherMap API
+- ✅ Implement Docker containerization
+- ✅ Create application configuration files
+- ✅ Set up environment variables and secrets
 
-**包含的文件**:
+**Files included**:
 ```
 weather-app/app.js
 weather-app/src/
-weather-app/package.json
 weather-app/Dockerfile
-weather-app/.env.example
+weather-app/package.json
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
-git checkout -b feature/weather-app
+git checkout -b feature/weather-app-development
 git add weather-app/
-git commit -m "feat: 开发天气应用并集成API"
-git push origin feature/weather-app
-# 创建Pull Request
+git commit -m "feat: develop weather application with API integration"
+git push origin feature/weather-app-development
+# Create Pull Request
 ```
 
-#### **Pull Request #4: CI/CD流水线**
-**工作量**: 项目总量的20%
-**重点**: GitHub Actions、自动化部署、代码质量
+#### **Pull Request #4: CI/CD Pipeline Setup**
+**Workload**: 20% of total project
+**Focus**: GitHub Actions, automated deployment
 
-**任务**:
-- ✅ 配置GitHub Actions工作流
-- ✅ 设置自动化构建和部署
-- ✅ 配置代码质量检查
-- ✅ 实现多环境部署策略
-- ✅ 在流水线中设置自动化测试
+**Tasks**:
+- ✅ Configure GitHub Actions workflows
+- ✅ Set up automated build and deployment
+- ✅ Implement multi-environment deployment
+- ✅ Configure Azure service principal
+- ✅ Set up federated credentials
 
-**包含的文件**:
+**Files included**:
 ```
-.github/workflows/static-analysis.yml
-.github/workflows/terraform-plan.yml
-.github/workflows/terraform-apply.yml
 .github/workflows/build-app.yml
 .github/workflows/deploy-app.yml
+.github/workflows/static-analysis.yml
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
 git checkout -b feature/cicd-pipeline
-git add .github/
-git commit -m "feat: 添加GitHub Actions CI/CD流水线"
+git add .github/workflows/
+git commit -m "feat: implement CI/CD pipeline with GitHub Actions"
 git push origin feature/cicd-pipeline
-# 创建Pull Request
+# Create Pull Request
 ```
 
 ---
 
-### 🧪 **Yifan Jian (JianyiF) - 测试和文档**
+### 🧪 **Yifan Jian (JianyiF) - Testing and Documentation**
 
-#### **Pull Request #5: 测试和质量保证**
-**工作量**: 项目总量的10%
-**重点**: 测试、监控、质量保证
+#### **Pull Request #5: Testing and Quality Assurance**
+**Workload**: 20% of total project
+**Focus**: Testing, quality assurance, monitoring
 
-**任务**:
-- ✅ 编写单元测试和集成测试
-- ✅ 配置健康检查和监控
-- ✅ 实现错误处理和日志记录
-- ✅ 性能测试和优化
-- ✅ 安全测试和验证
+**Tasks**:
+- ✅ Implement unit tests for application
+- ✅ Set up integration testing
+- ✅ Configure monitoring and logging
+- ✅ Implement health checks
+- ✅ Create test documentation
 
-**包含的文件**:
+**Files included**:
 ```
-tests/unit/
-tests/integration/
-tests/performance/
-monitoring/
-health-checks/
+weather-app/tests/
+docs/TESTING_GUIDE.md
+docs/MONITORING_SETUP.md
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
-git checkout -b feature/testing-monitoring
-git add tests/ monitoring/
-git commit -m "feat: 添加全面的测试和监控"
-git push origin feature/testing-monitoring
-# 创建Pull Request
+git checkout -b feature/testing-and-qa
+git add weather-app/tests/
+git add docs/TESTING_GUIDE.md docs/MONITORING_SETUP.md
+git commit -m "feat: implement comprehensive testing and monitoring"
+git push origin feature/testing-and-qa
+# Create Pull Request
 ```
 
-#### **Pull Request #6: 文档和最终集成**
-**工作量**: 项目总量的10%
-**重点**: 文档、最终集成、项目演示
+#### **Pull Request #6: Documentation and Final Review**
+**Workload**: 20% of total project
+**Focus**: Documentation, final review, project completion
 
-**任务**:
-- ✅ 编写全面的项目文档
-- ✅ 创建部署指南
-- ✅ 最终集成测试
-- ✅ 准备项目演示
-- ✅ 创建API文档
+**Tasks**:
+- ✅ Create comprehensive project documentation
+- ✅ Write deployment guides
+- ✅ Create user manuals
+- ✅ Final code review and cleanup
+- ✅ Prepare project presentation
 
-**包含的文件**:
+**Files included**:
 ```
-README.md
-docs/PROJECT_OVERVIEW.md
 docs/DEPLOYMENT_GUIDE.md
-docs/API_DOCUMENTATION.md
-docs/TROUBLESHOOTING.md
+docs/USER_MANUAL.md
+docs/PROJECT_PRESENTATION.md
+README.md (updates)
 ```
 
-**Git命令**:
+**Git commands**:
 ```bash
-git checkout -b feature/documentation
-git add docs/ README.md
-git commit -m "feat: 添加全面的文档"
-git push origin feature/documentation
-# 创建Pull Request
+git checkout -b feature/documentation-final
+git add docs/
+git add README.md
+git commit -m "feat: complete project documentation and final review"
+git push origin feature/documentation-final
+# Create Pull Request
 ```
 
-## 工作量平衡总结
+## Development Workflow
 
-| 团队成员 | Pull Requests | 工作量 | 重点领域 |
-|----------|---------------|--------|----------|
-| **Yuntian Du** | 2个PR | 40% | 基础设施和DevOps |
-| **Cong Zhao** | 2个PR | 40% | 应用开发和CI/CD |
-| **Yifan Jian** | 2个PR | 20% | 测试和文档 |
+### Git Workflow
+1. **Create feature branch**: `git checkout -b feature/your-feature`
+2. **Make changes**: Edit files and test locally
+3. **Commit changes**: `git commit -m "feat: descriptive message"`
+4. **Push branch**: `git push origin feature/your-feature`
+5. **Create Pull Request**: Use GitHub web interface
+6. **Code review**: Team members review and approve
+7. **Merge**: Merge to main branch after approval
 
-## 开发工作流程
+### Pull Request Guidelines
+- **Title format**: `type: brief description`
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- **Description**: Include detailed description of changes
+- **Review**: At least one team member must approve
+- **Testing**: Ensure all tests pass before merging
 
-### 第一阶段：并行开发（第1-2周）
-```
-Yuntian: 基础设施搭建 (PR #1)
-Cong: 天气应用开发 (PR #3)
-Yifan: 测试框架 (PR #5)
-```
+### Communication
+- **Daily standups**: Brief updates on progress
+- **Weekly reviews**: Code review sessions
+- **Documentation**: Keep all documentation updated
+- **Issues**: Use GitHub issues for bug tracking
 
-### 第二阶段：集成（第3周）
-```
-Yuntian: AKS部署 (PR #2)
-Cong: CI/CD流水线 (PR #4)
-Yifan: 文档编写 (PR #6)
-```
+## Success Criteria
 
-### 第三阶段：最终集成（第4周）
-- 所有PR合并
-- 端到端测试
-- 最终文档审查
-- 项目演示准备
+### Technical Requirements
+- ✅ Multi-environment deployment (dev/test/prod)
+- ✅ Infrastructure as Code with Terraform
+- ✅ Containerized application with Docker
+- ✅ Kubernetes orchestration with AKS
+- ✅ Automated CI/CD pipeline
+- ✅ Comprehensive testing and monitoring
+- ✅ Complete documentation
 
-## Pull Request指南
+### Team Requirements
+- ✅ Equal workload distribution (20% each)
+- ✅ 6 pull requests total (2 per team member)
+- ✅ Code review process
+- ✅ Documentation completion
+- ✅ Project presentation ready
 
-### 每个PR的要求：
-1. **清晰的标题**: 描述所做的工作
-2. **详细描述**: 实现了什么以及为什么
-3. **测试**: 证明更改有效的证据
-4. **文档**: 更新相关文档
-5. **代码审查**: 至少2名团队成员必须批准
+## Timeline
 
-### PR模板：
-```markdown
-## Pull Request标题
-对更改的简要描述
+### Week 1-2: Infrastructure Setup
+- Yuntian: Infrastructure and AKS deployment
+- Cong: Application development
+- Yifan: Testing framework setup
 
-## 所做的更改
-- [ ] 功能1
-- [ ] 功能2
-- [ ] 错误修复
-- [ ] 文档更新
+### Week 3-4: Application Development
+- Yuntian: Monitoring and security
+- Cong: CI/CD pipeline implementation
+- Yifan: Testing and quality assurance
 
-## 测试
-- [ ] 单元测试通过
-- [ ] 集成测试通过
-- [ ] 手动测试完成
-- [ ] 无破坏性更改
+### Week 5-6: Integration and Testing
+- Yuntian: Performance optimization
+- Cong: Final application features
+- Yifan: Documentation and presentation
 
-## 文档
-- [ ] README已更新
-- [ ] API文档已更新
-- [ ] 部署指南已更新
+### Week 7: Final Review and Submission
+- All team members: Final review and cleanup
+- All team members: Documentation completion
+- All team members: Project presentation preparation
 
-## 截图（如适用）
-添加UI更改的截图
+## Conclusion
 
-## 检查清单
-- [ ] 代码遵循项目标准
-- [ ] 自我审查完成
-- [ ] 文档已更新
-- [ ] 测试已添加/更新
-```
+This work distribution ensures:
+- **Equal contribution** from all team members
+- **Clear responsibilities** for each pull request
+- **Comprehensive coverage** of all project requirements
+- **Quality assurance** through code reviews
+- **Complete documentation** for project success
 
-## 成功标准
-
-### 对每个团队成员：
-- ✅ 至少提交2个pull request
-- ✅ 代码被其他团队成员审查
-- ✅ 文档已更新
-- ✅ 测试已编写并通过
-- ✅ 积极参与团队会议
-
-### 对项目：
-- ✅ 满足所有期末作业要求
-- ✅ 应用已部署并可访问
-- ✅ CI/CD流水线正常工作
-- ✅ 文档完整
-- ✅ 团队协作得到展示
-
-## 时间线
-
-| 周次 | Yuntian | Cong | Yifan |
-|------|---------|------|-------|
-| 1 | 基础设施搭建 | 天气应用 | 测试框架 |
-| 2 | AKS部署 | CI/CD流水线 | 文档编写 |
-| 3 | 集成测试 | 集成测试 | 最终集成 |
-| 4 | 最终审查 | 最终审查 | 项目演示 |
-
-## 沟通计划
-
-### 每周团队会议：
-- **周一**: 规划和进度审查
-- **周三**: 周中检查
-- **周五**: 周总结和下周规划
-
-### 沟通渠道：
-- **GitHub**: 代码审查和讨论
-- **Slack/Discord**: 实时沟通
-- **Email**: 正式更新和文档
-
-## 风险缓解
-
-### 潜在问题：
-1. **工作量不均**: 定期检查和重新分配工作量
-2. **集成冲突**: 早期沟通和协调
-3. **技术困难**: 结对编程和知识共享
-4. **时间线延迟**: 缓冲时间和灵活截止日期
-
-### 应急计划：
-- 团队成员在不同领域的交叉培训
-- 每个团队成员的备用任务
-- 定期进度跟踪和调整
-- 阻塞问题的明确升级程序
-
-## 结论
-
-这种工作分配确保：
-- ✅ 所有团队成员的平等贡献
-- ✅ 不同项目领域的明确所有权
-- ✅ 每人多个pull request
-- ✅ 全面覆盖期末作业要求
-- ✅ 团队间平衡的工作量
-- ✅ 专业的开发工作流程
-
-该计划促进协作，同时确保个人责任和对期末作业的贡献。 
+The project demonstrates modern cloud-native development practices with Infrastructure as Code, containerization, and automated deployment pipelines. 
