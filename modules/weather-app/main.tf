@@ -24,7 +24,7 @@ resource "azurerm_container_registry" "main" {
 
 # Azure Cache for Redis
 resource "azurerm_redis_cache" "main" {
-  name                = "${var.environment}-redis"
+  name                = "${var.environment}-redis-${random_string.suffix.result}"
   location            = var.location
   resource_group_name = var.resource_group_name
   capacity            = var.redis_capacity
@@ -34,12 +34,19 @@ resource "azurerm_redis_cache" "main" {
   tags                = var.tags
 }
 
+# Random string for unique naming
+resource "random_string" "suffix" {
+  length  = 6
+  special = false
+  upper   = false
+}
+
 # Kubernetes Provider Configuration
 provider "kubernetes" {
   host                   = var.kubernetes_host
-  client_certificate     = base64decode(var.kubernetes_client_certificate)
-  client_key             = base64decode(var.kubernetes_client_key)
-  cluster_ca_certificate = base64decode(var.kubernetes_cluster_ca_certificate)
+  client_certificate     = var.kubernetes_client_certificate
+  client_key             = var.kubernetes_client_key
+  cluster_ca_certificate = var.kubernetes_cluster_ca_certificate
 }
 
 # Kubernetes Namespace
