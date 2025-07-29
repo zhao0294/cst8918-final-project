@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'app/**'
+      - 'weather-app/**'
       - '.github/workflows/build-app.yml'
 
 permissions:
@@ -38,7 +38,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./app
+          context: ./weather-app
           push: true
           tags: |
             ${{ secrets.ACR_LOGIN_SERVER }}/weather-app:${{ github.sha }}
