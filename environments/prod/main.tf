@@ -55,19 +55,19 @@ module "aks" {
 }
 
 # Weather App Module for Production Environment
-module "weather_app" {
-  source = "../../modules/weather-app"
-
-  resource_group_name = module.network.resource_group_name
-  location            = local.location
-  environment         = local.environment
-  acr_name            = "cst8918acr"
-  redis_capacity      = 1
-  redis_sku           = "Basic"
-  app_replicas        = 2
-  kubernetes_host     = module.aks.host
-  kubernetes_client_certificate = module.aks.client_certificate
-  kubernetes_client_key         = module.aks.client_key
-  kubernetes_cluster_ca_certificate = module.aks.cluster_ca_certificate
-  tags                = local.tags
-} 
+# module "weather_app" {
+#   source = "../../modules/weather-app"
+#
+#   resource_group_name = module.network.resource_group_name
+#   location            = local.location
+#   environment         = local.environment
+#   acr_name            = "cst8918acr"
+#   redis_capacity      = 1
+#   redis_sku           = "Basic"
+#   app_replicas        = 2
+#   kubernetes_host     = module.aks.host
+#   kubernetes_client_certificate = module.aks.client_certificate
+#   kubernetes_client_key         = module.aks.client_key
+#   kubernetes_cluster_ca_certificate = module.aks.cluster_ca_certificate
+#   tags                = local.tags
+# } 
